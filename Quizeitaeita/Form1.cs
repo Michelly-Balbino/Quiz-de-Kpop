@@ -26,37 +26,59 @@ namespace Quizeitaeita
 
             int buttonTag = Convert.ToInt32(senderObject.Tag);
 
-            if(buttonTag == QuestaoCorreta)
+            if (buttonTag == QuestaoCorreta)
             {
                 Pontuacao++;
-
             }
 
             if (PerguntaNumero == TotalPerguntas)
             {
                 porcentagem = (int)Math.Round((double)(Pontuacao * 100) / TotalPerguntas);
 
-                MessageBox.Show(
+                // --- MODIFICAÇÃO INICIADA AQUI ---
+
+                // 1. Prepara a mensagem final com a pergunta "Deseja jogar novamente?"
+                string mensagemFinal =
                     "Quiz finalizado!" + Environment.NewLine +
                     "Você acertou " + Pontuacao + " de " + TotalPerguntas + " perguntas." + Environment.NewLine +
-                    "Sua pontuação é " + porcentagem + "%" + Environment.NewLine + "Obrigado por jogar!"
-                    );
+                    "Sua pontuação é " + porcentagem + "%" + Environment.NewLine +
+                    "Deseja jogar novamente?";
 
-                Pontuacao = 0;
-                PerguntaNumero = 1;
-                QuestaoCorreta = 0;
-                askQuestion(PerguntaNumero);
-                return;
+                // 2. Exibe a MessageBox com botões Sim e Não, e armazena a resposta
+                DialogResult resultado = MessageBox.Show(
+                    mensagemFinal,
+                    "Fim do Quiz", // Título da janela
+                    MessageBoxButtons.YesNo, // Botões Sim/Não
+                    MessageBoxIcon.Question // Ícone de pergunta
+                );
+
+                // 3. Verifica a resposta do usuário
+                if (resultado == DialogResult.Yes)
+                {
+                    // Se SIM, reinicia o quiz:
+                    Pontuacao = 0;
+                    PerguntaNumero = 1;
+                    QuestaoCorreta = 0;
+                    askQuestion(PerguntaNumero);
+                }
+                else
+                {
+                    // Se NÃO (ou fechou a janela), fecha o aplicativo:
+                    Application.Exit();
+                }
+
+                // --- MODIFICAÇÃO ENCERRADA AQUI ---
+
+                return; // Impede que o código continue para a próxima pergunta após o fim.
             }
 
             PerguntaNumero++;
             askQuestion(PerguntaNumero);
-
         }
 
         private void askQuestion(int qnum)
         {
-            switch(qnum)
+            switch (qnum)
             {
                 case 1:
                     pictureGrupo.Image = Properties.Resources.XLOV;
@@ -72,7 +94,7 @@ namespace Quizeitaeita
 
                     break;
 
-                    case 2:
+                case 2:
                     pictureGrupo.Image = Properties.Resources.TXT;
 
                     lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
@@ -86,10 +108,10 @@ namespace Quizeitaeita
 
                     break;
 
-                    case 3:
+                case 3:
                     pictureGrupo.Image = Properties.Resources.ILLIT;
-                    
-                    lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?"; 
+
+                    lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
 
                     btnOpcao1.Text = "ITZY";
                     btnOpcao2.Text = "ILLIT";
@@ -100,7 +122,7 @@ namespace Quizeitaeita
 
                     break;
 
-                    case 4:
+                case 4:
                     pictureGrupo.Image = Properties.Resources.TWICE;
                     lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
                     btnOpcao1.Text = "MAMAMOO";
@@ -108,10 +130,10 @@ namespace Quizeitaeita
                     btnOpcao3.Text = "TWICE";
                     btnOpcao4.Text = "GFRIEND";
 
-                    QuestaoCorreta = 3; 
+                    QuestaoCorreta = 3;
                     break;
 
-                    case 5:
+                case 5:
                     pictureGrupo.Image = Properties.Resources.LE_SSERAFIM;
                     lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
                     btnOpcao1.Text = "LE SSERAFIM";
@@ -122,7 +144,7 @@ namespace Quizeitaeita
                     QuestaoCorreta = 1;
                     break;
 
-                    case 6:
+                case 6:
                     pictureGrupo.Image = Properties.Resources.STRAY_KIDS;
                     lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
                     btnOpcao1.Text = "GOT7";
@@ -133,7 +155,7 @@ namespace Quizeitaeita
                     QuestaoCorreta = 3;
                     break;
 
-                    case 7:
+                case 7:
                     pictureGrupo.Image = Properties.Resources.RED_VELVET;
                     lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
                     btnOpcao1.Text = "MAMAMOO";
@@ -144,7 +166,7 @@ namespace Quizeitaeita
                     QuestaoCorreta = 2;
                     break;
 
-                    case 8:
+                case 8:
                     pictureGrupo.Image = Properties.Resources.BTS;
                     lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
                     btnOpcao1.Text = "SEVENTEEN";
@@ -155,7 +177,7 @@ namespace Quizeitaeita
                     QuestaoCorreta = 2;
                     break;
 
-                    case 9:
+                case 9:
                     pictureGrupo.Image = Properties.Resources.NEW_JEANS;
                     lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
                     btnOpcao1.Text = "LE SSERAFIM";
@@ -166,7 +188,7 @@ namespace Quizeitaeita
                     QuestaoCorreta = 2;
                     break;
 
-                    case 10:
+                case 10:
                     pictureGrupo.Image = Properties.Resources._2NE1;
                     lblpergunta.Text = "Qual desse grupo de k-pop pertence esses integrantes?";
                     btnOpcao1.Text = "BLACKPINK";
@@ -181,4 +203,3 @@ namespace Quizeitaeita
         }
     }
 }
-

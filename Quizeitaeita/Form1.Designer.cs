@@ -51,52 +51,65 @@
             // 
             // btnOpcao1
             // 
-            btnOpcao1.Location = new Point(97, 295);
+            btnOpcao1.BackColor = Color.White;
+            btnOpcao1.FlatStyle = FlatStyle.Flat;
+            btnOpcao1.Font = new Font("Segoe UI", 12F);
+            btnOpcao1.Location = new Point(102, 307);
             btnOpcao1.Name = "btnOpcao1";
-            btnOpcao1.Size = new Size(226, 57);
+            btnOpcao1.Size = new Size(211, 53);
             btnOpcao1.TabIndex = 1;
             btnOpcao1.Tag = "1";
             btnOpcao1.Text = "XLOV";
-            btnOpcao1.UseVisualStyleBackColor = true;
+            btnOpcao1.UseVisualStyleBackColor = false;
             btnOpcao1.Click += CheckAnswerEvent;
             // 
             // btnOpcao2
             // 
-            btnOpcao2.Location = new Point(97, 355);
+            btnOpcao2.BackColor = Color.White;
+            btnOpcao2.FlatStyle = FlatStyle.Flat;
+            btnOpcao2.Font = new Font("Segoe UI", 12F);
+            btnOpcao2.Location = new Point(102, 367);
             btnOpcao2.Name = "btnOpcao2";
-            btnOpcao2.Size = new Size(226, 60);
+            btnOpcao2.Size = new Size(211, 56);
             btnOpcao2.TabIndex = 2;
             btnOpcao2.Tag = "2";
             btnOpcao2.Text = "TXT";
-            btnOpcao2.UseVisualStyleBackColor = true;
+            btnOpcao2.UseVisualStyleBackColor = false;
             btnOpcao2.Click += CheckAnswerEvent;
             // 
             // btnOpcao3
             // 
-            btnOpcao3.Location = new Point(329, 295);
+            btnOpcao3.BackColor = Color.White;
+            btnOpcao3.FlatStyle = FlatStyle.Flat;
+            btnOpcao3.Font = new Font("Segoe UI", 12F);
+            btnOpcao3.Location = new Point(351, 307);
             btnOpcao3.Name = "btnOpcao3";
-            btnOpcao3.Size = new Size(226, 57);
+            btnOpcao3.Size = new Size(211, 53);
             btnOpcao3.TabIndex = 3;
             btnOpcao3.Tag = "3";
             btnOpcao3.Text = "XG";
-            btnOpcao3.UseVisualStyleBackColor = true;
+            btnOpcao3.UseVisualStyleBackColor = false;
             btnOpcao3.Click += CheckAnswerEvent;
             // 
             // btnOpcao4
             // 
-            btnOpcao4.Location = new Point(329, 358);
+            btnOpcao4.BackColor = Color.White;
+            btnOpcao4.FlatStyle = FlatStyle.Flat;
+            btnOpcao4.Font = new Font("Segoe UI", 12F);
+            btnOpcao4.Location = new Point(351, 370);
             btnOpcao4.Name = "btnOpcao4";
-            btnOpcao4.Size = new Size(226, 57);
+            btnOpcao4.Size = new Size(211, 53);
             btnOpcao4.TabIndex = 4;
             btnOpcao4.Tag = "4";
             btnOpcao4.Text = "WINNER";
-            btnOpcao4.UseVisualStyleBackColor = true;
+            btnOpcao4.UseVisualStyleBackColor = false;
             btnOpcao4.Click += CheckAnswerEvent;
             // 
             // lblpergunta
             // 
             lblpergunta.BackColor = Color.Transparent;
-            lblpergunta.Location = new Point(97, 254);
+            lblpergunta.Font = new Font("Segoe UI Symbol", 14.25F);
+            lblpergunta.Location = new Point(82, 254);
             lblpergunta.Name = "lblpergunta";
             lblpergunta.Size = new Size(545, 27);
             lblpergunta.TabIndex = 5;
